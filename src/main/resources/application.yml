@@ -1,0 +1,25 @@
+server:
+  port: 9993  #启动的端口号
+  context-path: /
+spring:
+  http:
+    encoding:
+      force: true #强制使用配置密码
+  jpa:
+    database: mysql #数据库类型
+    show-sql: true #是否显示sql语句
+    open-in-view: true
+    hibernate:
+      ddl-auto: update #建表的时候是更新还是新建
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+  datasource:
+    url: jdbc:mysql://localhost:3306/library?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 
+    driver-class-name: com.mysql.jdbc.Driver
+    dbcp2:
+      max-total: 20
+      initial-size: 10
+      max-idle: 8
+      min-idle: 8
